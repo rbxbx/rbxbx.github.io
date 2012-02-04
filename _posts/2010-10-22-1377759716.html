@@ -1,0 +1,22 @@
+---
+layout: post
+title: Object.antialias_method
+---
+
+<p>I doubt I&#8217;d actually do this, but the pattern of defining a method, only to have it return the inverse of another method is common enough.</p>
+
+<p>ie:</p>
+
+<pre>def unregistered?
+
+  !registered
+
+end
+
+</pre>
+
+<p>But alas&#8230; stupid ruby things are fun.</p>
+
+<script src="http://gist.github.com/641770.js?file=antialias_method.rb"></script><p>So there.</p>
+
+<p>edit:  <a title="Oh, hey common lisp, whatup?" href="http://www.ai.mit.edu/projects/iiip/doc/CommonLISP/HyperSpec/Body/fun_complement.html">Oh, hey common lisp, whatup? complement!</a></p>
