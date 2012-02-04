@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Easy Parallelism in Ruby
+tags: ['ruby', 'scaling']
 ---
 
 <p>Last week, @voxdolo and I were faced with a problem: our application needed to make 3 API calls at once, and while two of the services were ok (finishing in three seconds or so), the third would take up to 8 seconds to retrieve it&#8217;s data.  When done synchronously this meant on a good day we&#8217;d get out in 14 seconds, which is simply unacceptable.</p>
