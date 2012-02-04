@@ -5,11 +5,11 @@ tags : [clojure, SOA, ruby, functional-programming]
 ---
 {% include JB/setup %}
 
-Decomposition through exposition towards eventual composition
-=============================================================
+Service Oriented Architectures with Rails and Clojure
+=====================================================
 
-Why FP
-------
+Why functional languages (a primer)
+-----------------------------------
 
 * Simple to reason about
  - inputs yield outputs
