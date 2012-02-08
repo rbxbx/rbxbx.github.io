@@ -11,6 +11,11 @@ body {
 .container {
   width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
 }
+p {
+  font-size: 1.2em;
+  line-height: 1.55em;
+  margin: 1.2em 0;
+}
 
 /* The white background content wrapper */
 .content {
