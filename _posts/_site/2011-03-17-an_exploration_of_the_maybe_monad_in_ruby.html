@@ -1,0 +1,13 @@
+<p>A (perhaps crude) exploration of the <a title="Maybe" href="http://en.wikipedia.org/wiki/Monad_(functional_programming)#Maybe_monad">Maybe Monad</a> in Ruby.</p>
+
+<p>I realize this is somewhat <a href="http://www.lostechies.com/blogs/derickbailey/archive/2010/10/09/the-maybe-monad-in-ruby.aspx">treaded</a> <a href="http://andand.rubyforge.org/">turf</a>, however it was done for my own learning, and I think came out pretty clean!  Needs tests and could be made more flexible, yada yada.</p>
+
+<script src="https://gist.github.com/818870.js?file=maybe.rb"></script><p>Usage:</p>
+
+<pre>  nil.maybe { |n| n + 2 + 3 }
+
+  =&gt; nil 
+
+</pre>
+
+<p>Which is essentially the same as nil.try(:+, 1).try(:+, 2).try(:+, 3)    If the result is nil anywhere in the chain, the block simply returns nil</p>

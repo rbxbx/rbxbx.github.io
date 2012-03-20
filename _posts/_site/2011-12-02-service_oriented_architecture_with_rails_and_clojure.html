@@ -1,0 +1,311 @@
+<h1>Decomposition through exposition towards eventual composition</h1>
+
+<h2>Why FP</h2>
+
+<ul><li>
+
+<p>Simple to reason about</p>
+
+<ul><li>inputs yield outputs</li>
+
+<li>data and behavior are the same</li>
+
+</ul></li>
+
+<li>
+
+<p>Simple to decompose</p>
+
+<ul><li>functions are truly first class</li>
+
+<li>when everything is composed of functions/data powerful patterns of abstraction become available</li>
+
+<li>currying</li>
+
+</ul></li>
+
+<li>
+
+<p>Simple to compose</p>
+
+<ul><li>partial application | a function without all it&#8217;s arguments simply returns a function expecting those additional args</li>
+
+<li>(implicit in ML style languages, explicit in lisps/clojure)</li>
+
+</ul></li>
+
+<li>
+
+<p>Composition leads to reuse</p>
+
+<ul><li>Almost anything you can imagine writing that&#8217;s a general operation, you will almost certainly see that it was available to you before hand.</li>
+
+<li>Learn to recognize patterns and be tickled by them, intuit that someone smarter than you has probably solved this.</li>
+
+</ul></li>
+
+<li>
+
+<p>Programming, motherfucker</p>
+
+<ul><li>it matters</li>
+
+<li>&#8230;the more you know!</li>
+
+<li>exposure and experimentation build &amp; refine tastes</li>
+
+<li>Do you have an argument for not knowing more? Is putting the shoe on the other foot a bad idea sometimes?</li>
+
+</ul></li>
+
+</ul><h2>Why Clojure</h2>
+
+<ul><li>
+
+<p>Lightweight Syntax</p>
+
+<ul><li>very little to learn, data and behavior share representation</li>
+
+<li>omg parens. Whatever, like everything about programming you currently understand made sense to you immediately.</li>
+
+<li>I can&#8217;t read arabic, so it&#8217;s fucking worthless?</li>
+
+</ul></li>
+
+<li>
+
+<p>Pragmatic</p>
+
+<ul><li>Nearing two years old, it&#8217;s not just going to go away</li>
+
+<li>first class citizen of the JVM. There is a Java library for your problem, and it&#8217;s probably a lot more refined than you realize.</li>
+
+<li>ie: ruby has can reach out to C, but there&#8217;s almost no reason you would unless you <em>really</em> had to. It&#8217;s hard.</li>
+
+<li>performant&#8230; without the expense of obfuscation. Write code as succinct (if not more so), than your current code, and watch it fly</li>
+
+<li>people are using it on real projects to solve real problems</li>
+
+<li>Relevance</li>
+
+<li>8th light</li>
+
+<li>Edgecase</li>
+
+<li>Atomic Object</li>
+
+<li>&#8230; and plenty of startups</li>
+
+<li>&#8230; and plenty of enterprise companies</li>
+
+</ul></li>
+
+<li>
+
+<p>Hype</p>
+
+<ul><li>founded hype, at that. Solves real problems, unlike things such as Node.js (if evented concurrency was a good idea, tornado or eventmachine would be successful)</li>
+
+<li>a real chance to innovate and be thought leaders</li>
+
+<li>making a grand impact on the Ruby and Rails community is really hard right now.</li>
+
+<li>&#8230; but maybe if we listened to other communities more we could see what we&#8217;re lacking</li>
+
+<li>it&#8217;s a two-way street</li>
+
+</ul></li>
+
+<li>
+
+<p>Fun</p>
+
+<ul><li>A lot of what attracted me to the Ruby community when I came into is present in the Clojure community</li>
+
+<li>Want to work with passionate and intelligent people? 
+
+<ul><li>Attract talent! Recruiting is <em>HARD</em>, especially right now</li>
+
+<li>it&#8217;s just compounded with super smart JVM/Java guys</li>
+
+<li>and super smart Lisp guys</li>
+
+<li>and super smart CS guys</li>
+
+</ul></li>
+
+<li>and you don&#8217;t need to rewrite every tool ever. The ecosystem is already there.</li>
+
+<li>when you do need to rewrite a tool, guess what, you&#8217;re a hero. Well done.</li>
+
+<li>palpable excitement from the community. Haven&#8217;t felt that in a while here :(</li>
+
+</ul></li>
+
+<li>
+
+<p>Simplicity vs Ease</p>
+
+<ul><li>Ruby is easy&#8230; sort of</li>
+
+<li>Clojure is hard(er)&#8230; sort of</li>
+
+<li>Ruby makes it really easy to get a reasonably tiny system up and running quickly, and achieve sorcery in the process</li>
+
+<li>Clojure (and FP in general) make it really easy to get reasonably large systems up and maintainable, and achieve wizardry</li>
+
+<li>A LOT of our apps go longer than 3-4 months. Perhaps we should think about things longer term.</li>
+
+</ul></li>
+
+</ul><h2>OOP vs FP</h2>
+
+<p>This is a stupid slide, we can talk about it later.</p>
+
+<h2>Making it Real</h2>
+
+<ul><li>
+
+<p>Service Layer behind a Rails app</p>
+
+<ul><li>we should probably be designing a lot more of our applications this way anyway</li>
+
+</ul></li>
+
+<li>
+
+<p>Full Stack</p>
+
+<ul><li>the framework support isn&#8217;t quite there yet for getting up and running quickly</li>
+
+<li>&#8230;but most of our projects last longer than a month anyway</li>
+
+<li>and if it truly is tiny enough that it would be a month long project&#8230; then the tooling is there</li>
+
+</ul></li>
+
+<li>
+
+<p>During the times we&#8217;re not using Clojure, we will be better Ruby devs for having done so</p>
+
+<ul><li>Learning.</li>
+
+<li>Learning.</li>
+
+<li>Learning.</li>
+
+<li>&#8230; Ruby supports (and took!) a lot of abstractions from Functional languages and Lisps</li>
+
+</ul></li>
+
+</ul><h2>So why not?</h2>
+
+<ul><li>
+
+<p>Learning new things is hard</p>
+
+<ul><li>You need to learn FP and Lisp in one swoop</li>
+
+<li>I had a hard time reasoning about CLJ in my independent studies without spending time with Haskell first</li>
+
+<li>There&#8217;s a good chance OOP has broken your brain.</li>
+
+<li>It&#8217;s not always easy to reason about problems in new ways</li>
+
+<li>
+
+<p>We are the next wave of BASIC programmers</p>
+
+<ul><li>&#8230; that was a Dijkstra joke</li>
+
+<li>&#8220;It is practically impossible to teach good programming to students that have had a prior exposure to BASIC: as potential programmers they are mentally mutilated beyond hope of regeneration.&#8221;</li>
+
+</ul></li>
+
+<li>
+
+<p>As a Rubyist that learning curve <em>is</em> lower</p>
+
+</li>
+
+<li>You understand type dynamism</li>
+
+<li>You understand metaprogramming</li>
+
+<li>You understand higher order functions 
+
+<ul><li>Enummerable</li>
+
+<li>Blocks, Procs, Lambdas, Object#method</li>
+
+</ul></li>
+
+<li>You probably care about programming if you&#8217;re here</li>
+
+</ul></li>
+
+<li>
+
+<p>Tooling</p>
+
+<ul><li>Especially around Vim, it&#8217;s not quite there yet.</li>
+
+<li>&#8230;but if you know how to use Vim outside of a Rails app anyway, you&#8217;ll be fine</li>
+
+<li>Pure Clojure Libraries</li>
+
+<li>A lot of them are missing</li>
+
+<li>Sometimes interacting with a Java library can be clunky 
+
+<ul><li>If it becomes enough of a problem, write a wrapper around it. The Facilities for doing so are awesome.</li>
+
+</ul></li>
+
+</ul></li>
+
+<li>
+
+<p>Vulnerability</p>
+
+<ul><li>You don&#8217;t know everything</li>
+
+<li>You need to admit and be in tune with this if you want to grow</li>
+
+<li>Making mistakes&#8230; probably more than you&#8217;re used to</li>
+
+<li>&#8230; but that&#8217;s okay</li>
+
+<li>I&#8217;m pretty sure you weren&#8217;t as bad ass as you are now when you first started with 
+
+<ul><li>Ruby or&#8230;</li>
+
+<li>Objected Oriented Programming or&#8230;</li>
+
+<li>Abstractions or&#8230;</li>
+
+<li>Programming</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul><h2>Concrete, damn you!</h2>
+
+<ul><li>I don&#8217;t know (every|any)thing either.</li>
+
+<li>
+
+<p>This becomes more apparent to me <em>every</em> <em>day</em></p>
+
+</li>
+
+<li>
+
+<p>Let&#8217;s look at some code</p>
+
+<ul><li><a href="https://github.com/rbxbx/clojure-as-a-service-example">https://github.com/rbxbx/clojure-as-a-service-example</a></li>
+
+</ul></li>
+
+</ul>

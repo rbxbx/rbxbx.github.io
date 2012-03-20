@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Just a <s>Functional</s> Programming enthusiast in Ruby land
+title: Just a <del>Functional</del> Programming enthusiast in Ruby land
 ---
 {% include JB/setup %}
 

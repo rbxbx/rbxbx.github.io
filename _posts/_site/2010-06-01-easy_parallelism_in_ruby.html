@@ -1,0 +1,11 @@
+<p>Last week, @voxdolo and I were faced with a problem: our application needed to make 3 API calls at once, and while two of the services were ok (finishing in three seconds or so), the third would take up to 8 seconds to retrieve it&#8217;s data.  When done synchronously this meant on a good day we&#8217;d get out in 14 seconds, which is simply unacceptable.</p>
+
+<p>After deciding we didn&#8217;t want to manage threads ourselves, we discovered the excellent <a title="Peach" href="http://peach.rubyforge.org/">Peach</a> library. Peach, which stands for parallel each, is an insert and go parallelized each (via [].peach) for arrays, not to mention map ([].pmap) and select ([].pselect). Simply replace the standard ruby method calls you need to be asynchronous with the peach equivalent, and you&#8217;re good to go.</p>
+
+<p>In case you haven&#8217;t gotten it yet&#8230;</p>
+
+<script src="http://gist.github.com/421840.js?file=peach.rb"></script><p>So while the name is only clever for the basic each, the lib is still awesome for quickly tackling async actions.</p>
+
+<p>With a little UX love and the now 8 second data retrieval, we were able to make this workflow intuitive to the user (and less painful in development). Huzzah.</p>
+
+<p>One caveat: In using this with MRI, you will see a slight <em>decrease</em> in speed of an individual process, however in our case, the gains have been dramatic.</p>

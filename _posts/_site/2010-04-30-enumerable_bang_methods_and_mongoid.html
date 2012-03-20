@@ -1,0 +1,11 @@
+<p>One should be aware when using&#160;! methods (slice!, map!, etc!) on the collections returned from <a title="Mongoid" href="http://mongoid.org/">Mongoid</a> queries ie:</p>
+
+<script src="http://gist.github.com/386017.js?file=mongoid%21.rb"></script><p> foos does not have foo1..3 shifted from the array as you&#8217;d expect, it&#8217;s state has not been mutated.</p>
+
+<p>I&#8217;m not sure if this is by design or otherwise (it most certainly is a by-product of the <a title="Lazy Evaluation" href="http://en.wikipedia.org/wiki/Lazy_evaluation">lazily evaluated</a> nature of Mongoid queries, but for the time being</p>
+
+<pre>foos = foos.to_a; foos.slice!(0,3)</pre>
+
+<p>will do the trick.</p>
+
+<p>Just something to look out for!</p>

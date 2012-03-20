@@ -1,0 +1,21 @@
+<p>I&#8217;ve been using <a title="RVM" href="http://rvm.beginrescueend.com/">RVM</a> (and <a title="gemsets" href="http://rvm.beginrescueend.com/gemsets/basics/">gemsets</a>) to manage my Rubies lately, to much success.</p>
+
+<p>I however ran into the issue today of trying to install rspactor (think autotest on &#8216;roids) which depends on RubyCocoa to monitor changes to the filesystem.</p>
+
+<p>As it would turn out, when you vanilla install a Ruby via RVM, RubyCocoa is unsupported.</p>
+
+<p>To enable installation of RubyCocoa you&#8217;ll need to set a few flags during Ruby installation:</p>
+
+<pre>rvm install 1.8.7 --debug --reconfigure -C --enable-shared=yes</pre>
+
+<p>Then you are able to configure and install RubyCocoa as usual</p>
+
+<pre>cd path/to/rubycocoa/src</pre>
+
+<pre>ruby install.rb config --build-universal=yes</pre>
+
+<pre>ruby install.rb setup</pre>
+
+<pre>ruby install.rb install</pre>
+
+<p>Thanks to a googled <a title="this gist" href="http://gist.github.com/294465">gist</a> for the nudge(handholdingpush) in the right direction.</p>
