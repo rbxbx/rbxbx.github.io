@@ -29,6 +29,7 @@ This tutorial assumes a sane vim installation and the usage of
 4. Regenerate and _read_ the help tags!
 
         :helptags /path/to/your/vimbundles/VimClojure/doc
+        :help VimClojure.txt
 
 5. ... or if you're feeling lazy, feel free to peruse my [VimClojure Cheat Sheet](http://regretful.ly/clojure/2012/10/28/my-vimclojure-cheatsheet)
 6. Enjoy! Emacs users needn't have all the fun, y'kno.
