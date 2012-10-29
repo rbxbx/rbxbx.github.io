@@ -17,7 +17,7 @@ This tutorial assumes a sane vim installation and the usage of
 2. Install the vimclojure-nailgun client
 
         brew install \
-          https://raw.github.com/gist/3970910/072624c7fabb4ae5059aba70a1136d6ac869ba9b/vimclojure-nailgun-client.rb
+          https://raw.github.com/gist/3970910/ee016aaf9edbe351c7e2f718d70d19b5c4f46e80/vimclojure-nailgun-client.rb
 
 3. Add the following to your .vimrc
 
