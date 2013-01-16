@@ -9,8 +9,10 @@ pygments: true
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
+
 title : regretful.ly
-tagline: Musing of a functional programming nerd trapped in Ruby land
+tagline: Musing of a programming nerd trapped in an imperative world
+url: http://regretful.ly
 author :
   name : Robert Pitts
   email : rbxbxdev@gmail.com
