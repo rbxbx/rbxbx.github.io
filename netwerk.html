@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Netwerkin'</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Netwerkin' 4 fun n profit
+
+---
+
+# Agenda
+
+## may or may not be an accurate ordering, like UDP
+
+* Protocols
+* TCP
+* UDP
+* PACKETS
+* TCPDUMP
+* ERRATA
+
+---
+
+# PROTOCOLZZZ
+
+A protocol is just a set of rules that determine the format and meaning of frames/messages/packets sent between
+servers and clients
+
+---
+
+# TCP
+
+## Transmission Control Protocol
+
+A "connection-oriented" protocol that computers communicate over the internet/network with
+TCP has error-checking and guarantees around delivery of data and that packets will be delivered in the order set
+
+---
+
+# UDP
+
+## User Datagram Protocol
+
+A "connectionless" protocol that works like TCP but makes no guarantees around error checking and recovery
+It instead continiously sends datagrams (aka ~packets w/o guarantees) to the recepient regardless of receipt
+
+---
+
+# Packets
+
+A packet is a small chunk of data sent over the network with has a header and a payload
+
+This is roughly analogous to a real life package. Your header contains sender and recipient IP addresses (and a few more things) and your payload contains the actual chunk of data (between 1.5kb and 64kb, depending!)
+
+---
+
+# Connection v Connectionless
+
+UDP will just spam whatever you point it at without ensuring that there's anything at the other end
+Whereas TCP performs a 3 way handshake first and will disconnect if the client disappears (eventually).
+
+## SYN, SYN-ACK, ACK
+
+This is the 3 way handshake!
+
+_SYN_chronize, _SYN_chronize_ACK_nowledgement, _ACK_nowledge
+
+(host a, host b, host a)
+
+A connection is now established!
+
+---
+
+# what use for?
+
+Basically TCP is more useful where reliability is paramount (http, ssh, smtp, et al)
+
+UDP is useful where speed is key (games, streams, DNS, etc)
+
+---
+
+# TCPDUMP
+
+So that preamble brings us to why we're actually here, `tcpdump`.
+
+tcpdump is a *nix utility that is very likely on your computer if you're running any *nix-like (linux, mac osx)
+
+It essentially allows you to create "dumps" or "traces" of network activity.
+
+## DEMO TIME (oh no)
+
+`tcpdump`
+
+`tcpdump -n`
+
+`tcpdump -n -v(vv)`
+
+`tcpdump -c`
+
+`tcpdump -i`
+
+`tcpdump -w and tcpdump -r`
+
+note: wireshark and some other networking tools can open pcap dumps! They may or may not be friendlier / more intuitive.
+
+---
+
+# Filters
+
+Seeing all network traffic is nice and all, but usually we care about specific bits of data. Filters allow us to accomplish this.
+
+---
+
+## Host / Port
+
+`tcpdump -n -vvv -c 100 -i any host 127.0.0.1`
+
+`tcpdump -n -vvv -c 100 -i any port 3000`
+
+`tcpdump -n -vvv -c 100 -i any host 127.0.0.1 and port 3000`
+
+`tcpdump -n -vvv -c 100 -i any host 127.0.0.1 and (port 3000 or port 4000)`
+
+---
+
+# Making Sense of Things (TM)
+
+## FLAGSSSSSSzzz (flags)
+
+[S] - SYN (Start Connection)
+
+[S.] - SYN-ACK (depending on version)
+
+[.] - No Flag Set
+
+[P] - PSH (Push Data)
+
+[F] - FIN (Finish Connection)
+
+[R] - RST (Reset Connection)
+
+---
+
+# omg so hard 2 read ;_;
+
+## -XX, -A
+
+-XX hex and ascii
+
+-A ascii only
+
+---
+
+# yyyyy?
+
+Often times it can be useful to see your data flowing through the application
+_before_ it hits the application layer.
+
+your webserver/webapp/etc tend to do all sorts of things to data that can
+obfuscate issues that lie (perhaps) outside the application layer.
+
+---
+
+# THX, NO QUESTIONS
+
+jk but I probably don't have a good answer
+
+Slides available somewhere, maybe.
+
+---
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
